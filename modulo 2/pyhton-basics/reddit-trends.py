@@ -16,7 +16,6 @@ auth = requests.auth.HTTPBasicAuth(
     'TXIYR30vRClP8g7qXQT5tA', 'ftqjZImkIrmLZ7wsCe5XfxxsU_ODBA')
 
 # here we pass our login method (password), username, and password
-print(os.getenv("REDDIT_USERNAME"))
 data = {'grant_type': 'password',
         'username': os.getenv("REDDIT_USERNAME"),
         'password': os.getenv("REDDIT_PASSWORD")}
