@@ -4,8 +4,10 @@ from collections import defaultdict
 from nltk.corpus import stopwords
 import nltk
 import pickle
+from dotenv import load_dotenv
 import os
 
+load_dotenv()
 nltk.download('stopwords')
 
 
@@ -14,11 +16,10 @@ auth = requests.auth.HTTPBasicAuth(
     'TXIYR30vRClP8g7qXQT5tA', 'ftqjZImkIrmLZ7wsCe5XfxxsU_ODBA')
 
 # here we pass our login method (password), username, and password
-username = os.getenv('REDDIT_USERNAME')
-password = os.getenv('REDDIT_PASSWORD')
+print(os.getenv("REDDIT_USERNAME"))
 data = {'grant_type': 'password',
-        'username': os.getenv('REDDIT_USERNAME'),
-        'password': os.getenv('REDDIT_PASSWORD')}
+        'username': os.getenv("REDDIT_USERNAME"),
+        'password': os.getenv("REDDIT_PASSWORD")}
 
 # setup our header info, which gives reddit a brief description of our app
 headers = {'User-Agent': 'MyBot/0.0.1'}
